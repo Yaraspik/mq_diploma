@@ -1,0 +1,24 @@
+.page__trends {
+	text-align: center;
+	margin-top: 63px;
+}
+
+.trends__title {
+ text-transform: uppercase; 
+ font-family: opensans-bold, sans-serif;
+ font-size: 20px;
+ position: relative;
+/*Попытка нивелировать margin-block-start:0;, других способов не нашел. Подскажите решение лучше. Спасибо.*/
+ margin-top: -3px; 
+}
+
+.trends__title::after {
+  content: '';
+  position: relative;
+  background: #e1d9bd;
+  height: 3px;
+  width: 66px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 14px;
+}
