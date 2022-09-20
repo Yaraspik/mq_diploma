@@ -1,24 +1,244 @@
+/* =====TRENDS===== */
+
 .page__trends {
 	text-align: center;
 	margin-top: 63px;
 }
 
-.trends__title {
- text-transform: uppercase; 
- font-family: opensans-bold, sans-serif;
- font-size: 20px;
- position: relative;
-/*Попытка нивелировать margin-block-start:0;, других способов не нашел. Подскажите решение лучше. Спасибо.*/
- margin-top: -3px; 
+.trends-wrapper {
+  display: flex;
+  text-align: left;
+  margin-top: 28px;
+  gap: 4px;
 }
 
-.trends__title::after {
-  content: '';
+.trend {
+  height: 320px;
+  width: 25%;
+  display: flex;
+  align-items: flex-end;
   position: relative;
-  background: #e1d9bd;
-  height: 3px;
-  width: 66px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 14px;
+  z-index: 0;
+}
+
+.trend:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.trend-first {
+  background-image: url(../images/trend1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #666666;
+}
+
+.trend-second {
+  background-image: url(../images/trend2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #666666;
+}
+
+.trend-third {
+  background-image: url(../images/trend3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #666666;
+}
+
+.trend-fourth {
+  background-image: url(../images/trend4.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #666666;
+}
+
+.description {
+  width: 100%;
+  border: 3px #b59f5b solid;
+  margin-left: 18px;
+  margin-bottom: 16px;
+  margin-right: 21px;
+  padding: 42px 44px 35px 35px;
+}
+
+.trend__tags-cloud-list {
+list-style-type: none;
+  color: #b59f5b;
+  display: flex;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+  font-size: 14px;
+}
+
+.trend__tags-item {
+  margin-right: 20px;
+ }
+
+ .trend__tags-item-link {
+  color: #b59f5b;
+}
+
+ .trend__tags-item-link:hover {
+  text-decoration: underline;
+}
+
+.trend__title {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+  font-size: 20px;
+  margin-top: 11px;
+}
+
+.trend__title-link {
+  color: #ffffff;
+}
+
+.trend__title-link:hover {
+  color: #b59f5b;
+}
+
+/* =====OUR PRODUCTS===== */
+
+.page__our-products {
+  text-align: center;
+}
+
+.our-products-wrapper {
+  display: flex;
+  text-align: left;
+  margin-top: 28px;
+  justify-content: space-between;
+}
+
+.product {
+  width: 347px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-img {
+  position: relative;
+  top: 32px;
+  height: 204px;
+  object-fit: cover;
+}
+
+.product__card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 58px 23px 29px;
+  max-width: 347px;
+  height: 100%;
+    
+  outline: 3px solid #b59f5b;
+  z-index: 1;
+}
+
+.product__title {
+  text-transform: uppercase; 
+  font-family: opensans-bold, sans-serif;
+  font-size: 20px;
+}
+
+.product__description {
+  margin-top: 0.5rem;
+  font-size: 15px;
+}
+
+.product__description-link {
+  color: #b59f5b;
+}
+
+.product__description-link:hover {
+text-decoration: underline;
+}
+
+.product__prices-description {
+  width: 100%;
+  display: flex;
+  margin-top: 21.5px;
+  justify-content: space-between;
+}
+
+.product__prices {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.old-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+}
+
+.actual-price {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+}
+
+.btn-shop {
+  width: 140px;
+  height: 48px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+
+  border: none;
+  background-color: #b59f5b;
+  color: #ffffff;
+}
+
+.btn-shop:hover {
+  background-color: #323232;
+  cursor: pointer
+}
+
+.holder {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  width: 390px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.popup::after {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.popup__title {
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+  font-size: 20px;
+  position: relative;
 }

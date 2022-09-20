@@ -6,19 +6,32 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+p {
+  font-family: opensans-regular, sans-serif;
+}
+
 .indented-paragraph {
   margin-top: 1em;
 }
 
 @font-face {
-  font-family: opensans-regular;
-  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+  font-family: "opensans-regular";
+  src: url(../fonts/OpenSans-Regular.ttf) format("ttf"),
+    url(../fonts/OpenSans-Regular.woff) format("woff"),
+    url(../fonts/OpenSans-Regular.woff2) format("woff2");
   font-weight: regular;
   font-style: normal;
 }
+
 @font-face {
-  font-family: opensans-bold;
-  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+  font-family: "opensans-bold";
+  src: url(../fonts/OpenSans-Bold.ttf) format("ttf"),
+    url(../fonts/OpenSans-Bold.woff) format("woff"),
+    url(../fonts/OpenSans-Bold.woff2) format("woff2");
   font-weight: bold;
   font-style: normal;
 }
@@ -33,7 +46,7 @@
   border: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-} 
+}
 
 /* =====HEADER===== */
 .header {
@@ -49,7 +62,7 @@
 }
 
 .header:after {
-  content:"";
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -74,10 +87,6 @@
   align-items: center;
 }
 
-.menu__logo-link {
-  text-decoration: none;
-}
-
 .menu__logo {
   width: 179px;
 }
@@ -93,13 +102,11 @@
 }
 
 .menu__link {
-  text-decoration: none;
   color: #ffffff;
 }
 
 .menu__link:hover {
   text-decoration: underline;
-  color: #inherit;
 }
 
 .header-title {
@@ -114,16 +121,37 @@
 
 /* =====PAGE===== */
 
-.page {
+.page-general {
+  display: flex
+}
 
+.section__title-general {
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+  font-size: 20px;
+  position: relative;
+  /*Попытка нивелировать margin-block-start:0;, других способов не нашел. Подскажите решение лучше. Спасибо.*/
+  margin-top: -3px;
+}
+
+.section__title-general::after {
+  content: '';
+  position: relative;
+  background: #e1d9bd;
+  height: 3px;
+  width: 66px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 14px;
 }
 
 .page-wrapper {
   display: flex;
+  flex-direction: column;
   margin: auto;
   padding: 64px 15px;
   max-width: 1200px;
-  
+
   font-family: opensans-regular, sans-serif;
 }
 
@@ -160,15 +188,14 @@
 }
 
 .news__tags-item {
- margin-right: 18px;
+  margin-right: 18px;
 }
 
 .news__tags-item:hover {
- text-decoration: underline;
+  text-decoration: underline;
 }
 
 .news__tags-link {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -181,7 +208,6 @@
 }
 
 .news__title-link {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -191,7 +217,6 @@
 
 .publication__meta {
   font-size: 12px;
-  text-decoration: none;
   margin-top: 28px;
   display: flex;
 }
@@ -226,12 +251,12 @@
 }
 
 .sidebar__title-general {
- text-transform: uppercase; 
- font-family: opensans-bold, sans-serif;
- font-size: 14px;
- position: relative;
-/*Попытка нивелировать margin-block-start:0;, других способов не нашел. Подскажите решение лучше. Спасибо.*/
- margin-top: -3px; 
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+  font-size: 14px;
+  position: relative;
+  /*Попытка нивелировать margin-block-start:0;, других способов не нашел. Подскажите решение лучше. Спасибо.*/
+  margin-top: -3px;
 }
 
 .sidebar__title-general::after {
@@ -246,7 +271,7 @@
 }
 
 .new__posts-content {
- display: flex;
+  display: flex;
   text-align: left;
   margin-top: 28px;
 }
@@ -283,7 +308,6 @@
 }
 
 .new__posts-publication-title-link {
-  text-decoration: none;
   color: inherit;
 }
 
@@ -295,17 +319,13 @@
 
 }
 
-.input-search {
-
-}
-
 .search {
   width: 223px;
   height: 48px;
   background-color: #f4f7f6;
   padding-left: 20px;
   border: none;
-  
+
   background-color: #f4f7f6;
   font-size: 13px;
 }
@@ -320,12 +340,12 @@
 .button-search {
   width: 48px;
   border: none;
-  
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+
   background-color: #b59f5b;
-  background-size: 37.5%;
+}
+
+.button-search-icon {
+  width: 18px;
 }
 
 .button-search:hover {
@@ -346,7 +366,7 @@
   padding-left: 20px;
   border: none;
   margin-top: 23px;
-  
+
   background-color: #f4f7f6;
   font-size: 13px;
 }
@@ -362,19 +382,20 @@
   width: 100%;
   height: 48px;
   margin-top: 23px;
-  
+
   font-size: 14px;
   text-transform: uppercase;
   font-family: opensans-bold, sans-serif;
-  
+
   background-color: #f4f7f6;
-  border: none;  
+  border: none;
   background-color: #b59f5b;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .mailing-button__subscription:hover {
   background-color: #323232;
+  cursor: pointer
 }
 
 /* =====TAGS===== */
@@ -387,7 +408,7 @@
 .tags-cloud__tags {
   font-family: opensans-bold, sans-serif;
   margin-top: 24px;
-  
+
 }
 
 .tags-cloud__list {
@@ -403,7 +424,6 @@
 }
 
 .tags-cloud__item-link {
-  text-decoration: none;
   border: 3px solid #eeeeee;
   color: #0f0d0e;
   padding: 8px 13px;
@@ -426,7 +446,7 @@
   font-family: opensans-bold, sans-serif;
   margin-top: 24px;
   text-align: left;
-  
+
 }
 
 .topics-cloud__list {
@@ -441,7 +461,6 @@
 }
 
 .topics-cloud__item-link {
-  text-decoration: none;
   border-bottom: 1px solid #eeeeee;
   color: #0f0d0e;
   padding-left: 2px;
@@ -460,12 +479,10 @@
 
 /* =====FOOTER===== */
 
-.footer {
-  
-}
-
 .footer-wrap {
-  padding: 29px 15px 42px;
+  padding-right:15px;
+  padding-left:15px;
+  padding-bottom:42px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -490,24 +507,8 @@
 }
 
 .socials-list__item {
-}
-
-.socials-list__item-link {
   width: 20px;
   height: 20px;
-  display: block;
-}
-
-.socials-list__item-link__dribble {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
-}
-
-.socials-list__item-link__pinterest {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg);
-}
-
-.socials-list__item-link__tumblr {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
 }
 
 .coryright {
@@ -516,5 +517,4 @@
   font-size: 12px;
   color: #999999;
   font-family: opensans-regular, sans-serif;
-  text-decoration: none;
 }
