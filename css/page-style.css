@@ -1,8 +1,8 @@
 /* =====TRENDS===== */
 
 .page__trends {
-	text-align: center;
-	margin-top: 63px;
+  text-align: center;
+  margin-top: 63px;
 }
 
 .trends-wrapper {
@@ -75,7 +75,7 @@
 }
 
 .trend__tags-cloud-list {
-list-style-type: none;
+  list-style-type: none;
   color: #b59f5b;
   display: flex;
   text-transform: uppercase;
@@ -85,13 +85,13 @@ list-style-type: none;
 
 .trend__tags-item {
   margin-right: 20px;
- }
+}
 
- .trend__tags-item-link {
+.trend__tags-item-link {
   color: #b59f5b;
 }
 
- .trend__tags-item-link:hover {
+.trend__tags-item-link:hover {
   text-decoration: underline;
 }
 
@@ -145,13 +145,13 @@ list-style-type: none;
   padding: 58px 23px 29px;
   max-width: 347px;
   height: 100%;
-    
+
   outline: 3px solid #b59f5b;
   z-index: 1;
 }
 
 .product__title {
-  text-transform: uppercase; 
+  text-transform: uppercase;
   font-family: opensans-bold, sans-serif;
   font-size: 20px;
 }
@@ -166,7 +166,7 @@ list-style-type: none;
 }
 
 .product__description-link:hover {
-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .product__prices-description {
@@ -213,32 +213,183 @@ text-decoration: underline;
   cursor: pointer
 }
 
-.holder {
-  position: fixed;
-  left: 0;
-  top: 0;
+/*=====POPUP=====*/
+
+.popup-holder {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+}
+
+.popup-holder::after {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.6;
 }
 
 .popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
   width: 390px;
-  background-color: #fff;
-  text-align: center;
+  background-color: #ffffff;
+  z-index: 20;
+  padding: 54px 31px;
 }
 
-.popup::after {
-  background-color: #000;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0.6;
-  z-index: 10;
+.popup__btn-close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -26px;
+  right: 0;
+  background-image: url(../svg/form-x.svg);
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
 }
 
-.popup__title {
+.popup__title-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-title {
   text-transform: uppercase;
   font-family: opensans-bold, sans-serif;
   font-size: 20px;
   position: relative;
+  margin-top: -3px;
+}
+
+.popup-title::after {
+  content: '';
+  position: relative;
+  background: #e1d9bd;
+  height: 3px;
+  width: 66px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 14px;
+}
+
+.popup__form {
+  font-size: 13px;
+}
+
+.popup__form-questions {
+  margin-top: 31px;
+}
+
+.popup__form-list {
+  margin-top: 9px;
+}
+
+.popup__form-select {
+  width: 328px;
+  height: 48px;
+  padding-left: 19px;
+  border: none;
+  background: #f4f7f6;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url(../svg/form-arrows.svg);
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  background-size: 8px;
+
+  cursor: pointer;
+}
+
+.popup__form-select:focus {
+  outline: 2px solid #b59f5b;
+}
+
+.popup__radio-mailing-list {
+  display: flex;
+  gap: 16px;
+}
+
+.popup__radio {
+  position: absolute;
+  display: none;
+}
+
+.popup__radio:checked ~ .popup__radio-group-text::before {
+  background-image: url(../svg/form-circle.svg);
+}
+
+.popup__radio-group-text {
+  font-size: 13px;
+  font-family: opensans-regular, sans-serif;
+}
+
+.popup__radio-group-text::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url(../svg/form-empty-circle.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 15px;
+}
+
+.popup__form-wishes {
+  width: 100%;
+  height: 131px;
+  resize: none;
+
+  margin-top: 12px;
+  padding: 20px 20px;
+  background: #f4f7f6;
+  border: none;
+
+  font-size: 13px;
+  font-family: opensans-regular, sans-serif;
+}
+
+.popup__form-wishes:focus {
+  outline: 2px solid #b59f5b;
+}
+
+.popup__btn-subscribe {
+  width: 100%;
+  height: 48px;
+  margin-top: 23px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: opensans-bold, sans-serif;
+
+  background-color: #f4f7f6;
+  border: none;
+  background-color: #b59f5b;
+  color: #ffffff;
+}
+
+.popup__btn-subscribe:hover {
+  background-color: #323232;
+  cursor: pointer
 }
