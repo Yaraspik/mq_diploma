@@ -92,4 +92,35 @@
         height: 230px;
         width: 100vw;
     }
+
+    .our-products-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .page-general {
+        flex-wrap: wrap;
+    }
+
+    .news {
+        flex-wrap: wrap;
+    }
+
+    .news_frame {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .news__pic {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .product-img {
+        height: 270px;
+    }
 }
