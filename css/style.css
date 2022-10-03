@@ -98,7 +98,7 @@ p {
   font-size: 13px;
 }
 
-.menu__item {
+.menu__item:nth-child(n+2) {
   margin-left: 35px;
 }
 
@@ -174,13 +174,11 @@ p {
 
 .news__pic {
   width: 381px;
-  max-height: 294px;
   object-fit: cover;
 }
 
 .news_frame {
   margin-left: 30px;
-  width: 367px;
 }
 
 .news__tags-list {
@@ -193,7 +191,7 @@ p {
   flex-wrap: wrap;
 }
 
-.news__tags-item {
+.news__tags-item:not(:last-child) {
   margin-right: 18px;
 }
 
@@ -290,7 +288,7 @@ p {
 }
 
 .new__posts-text {
-  margin-left: 19.5px;
+  margin-left: 19px;
   display: flex;
   flex-direction: column;
 }
@@ -349,10 +347,11 @@ p {
   border: none;
 
   background-color: #b59f5b;
-}
+  background-image: url(../svg/search.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 18px;
 
-.button-search-icon {
-  width: 18px;
 }
 
 .button-search:hover {
@@ -458,20 +457,15 @@ p {
 
 .topics-cloud__list {
   list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  line-height: 3.29;
 }
 
 .topics-cloud__item {
   font-size: 14px;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .topics-cloud__item-link {
-  border-bottom: 1px solid #eeeeee;
   color: #0f0d0e;
-  padding-left: 2px;
-  display: block;
 }
 
 .topics-cloud__item-link:hover {
@@ -492,13 +486,12 @@ p {
   padding-bottom:42px;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .socials {
-  height: 83px;
+  padding-top: 31px;
+  padding-bottom: 31px;
   width: 100%;
   display: flex;
   background-color: #f4f7f6;
@@ -513,9 +506,22 @@ p {
   align-items: center;
 }
 
-.socials-list__item {
+.socials-list__item-link {
   width: 20px;
   height: 20px;
+  display: block;
+}
+
+.social-list__item-link__dribble {
+  background-image: url(../svg/001-dribbble.svg);
+}
+
+.social-list__item-link__pinterest {
+  background-image: url(../svg/002-pinterest.svg);
+}
+
+.social-list__item-link__tumblr {
+  background-image: url(../svg/003-tumblr.svg);
 }
 
 .copyright {
@@ -541,7 +547,7 @@ p {
 }
 
 .trend {
-  height: 320px;
+  min-height: 320px;
   width: 25%;
   display: flex;
   align-items: flex-end;
@@ -658,24 +664,21 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-bottom: 23px;
 }
 
 .product-img {
-  position: relative;
-  top: 32px;
-  height: 204px;
   object-fit: cover;
 }
 
 .product__card-description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 58px 23px 29px;
-  max-width: 347px;
   height: 100%;
+  padding-top: 22px;
 
   outline: 3px solid #b59f5b;
+  outline-offset: 22px;
   z-index: 1;
 }
 
@@ -701,7 +704,7 @@ p {
 .product__prices-description {
   width: 100%;
   display: flex;
-  margin-top: 21.5px;
+  margin-top: 21px;
   justify-content: space-between;
 }
 
@@ -770,10 +773,6 @@ p {
 }
 
 .popup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
   width: 390px;
   background-color: #ffffff;
   z-index: 20;
