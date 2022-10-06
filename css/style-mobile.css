@@ -152,4 +152,30 @@
     .search {
         width: 100%;
     }
+
+.button-search {
+    min-width: 48px;
+}
+
+    .mailing-list {
+        margin-top: 44px;
+    }
+
+    .tags-cloud {
+        margin-top: 44px;
+    }
+
+    .topics-cloud {
+        margin-top: 44px;
+    }
+
+    /* =====PRODUCTS===== */
+    .page__our-products {
+        margin-top: 44px;
+    }
+
+    .our-products-wrapper {
+        gap: 26px;
+    }
+
 }
