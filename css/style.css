@@ -647,6 +647,11 @@ p {
 
 /* =====OUR PRODUCTS===== */
 
+.picture-default {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .page__our-products {
   text-align: center;
   max-width: 1200px;
@@ -777,6 +782,7 @@ p {
   background-color: #ffffff;
   z-index: 20;
   padding: 54px 31px;
+  position: relative;
 }
 
 .popup__btn-close {

@@ -178,4 +178,23 @@
         gap: 26px;
     }
 
+    .product {
+        width: 100%;
+    }
+
+    .product__card-description {
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+
+    .our-products-wrapper {
+        gap: 22px;
+    }
+
+    .product {
+        width: calc(50% - 22px);
+    }
 }
